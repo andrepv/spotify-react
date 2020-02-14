@@ -1,0 +1,37 @@
+@import "./styles/variables.scss";
+@import "./styles/global.scss";
+
+.app {
+  &__container {
+    display: flex;
+  }
+  &__navbar {
+    width: 20.3%;
+    padding: 40px 35px;
+    border-right: 1px solid $border-color;
+    &_mobile {
+      position: fixed;
+      right: -1000%;
+      &_open {
+        width: 100%;
+        position: fixed;
+        z-index: 999;
+        background: $bg-primary;
+        height: 100%;
+      }
+    }
+  }
+  &__content {
+    width: 79.7%;
+    padding: 40px 80px 140px;
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+    @media (max-width: 900px) {
+      padding: 40px 50px 140px;
+    }
+    @media (max-width: 450px) {
+      padding: 40px 30px 140px;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@import
+"variables",
+"modularscale";
+
+.navbar {
+  position: fixed;
+  width: 14.6%;
+  @media (max-width: 1024px) {
+    position: relative;
+    width: 100%;
+  }
+  &__logo {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__search {
+    width: 20px;
+    height: 20px;
+    stroke-width: 3px;
+    stroke: $text-secondary;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  &__group {
+    margin-bottom: 40px;
+    li:not(:last-child) .navbar__item {
+      margin-bottom: 23px;
+    }
+    &-header {
+      margin-bottom: 30px;
+      font-size: ms(-3);
+      letter-spacing: .9px;
+      font-weight: 600;
+      color: $text-secondary;
+    }
+  }
+  &__item {
+    display: inline-block;
+    letter-spacing: .6px;
+    font-size: ms(-1);
+    color: $text-secondary;
+    font-weight: 500;
+    &.active {
+      font-weight: 500;
+      color: $text-dark;
+      svg path {
+        fill: $text-dark;
+      }
+    }
+  }
+  &__icon {
+    margin-right: 15px;
+    svg {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      path {
+        fill: #B7B7B7;
+      }
+    }
+  }
+  &__open-btn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    background-color: $bg-primary;
+    right: 30px;
+    bottom: 150px;
+  }
+}

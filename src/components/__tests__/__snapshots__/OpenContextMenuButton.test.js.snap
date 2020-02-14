@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OpenContextMenuButton /> renders correctly 1`] = `
+<button
+  className="more-btn test "
+>
+  <span
+    onClick={[Function]}
+  >
+    Open Menu
+  </span>
+</button>
+`;

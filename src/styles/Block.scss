@@ -1,0 +1,75 @@
+@import
+"variables",
+"modularscale";
+
+.block {
+  padding: 0 10px;
+  &__media {
+    margin-bottom: 12px;
+  }
+  &__img {
+    border-radius: $border-radius;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+  &__title {
+    font-size: ms(-2);
+    font-weight: 500;
+    color: $text-dark;
+    margin-bottom: 2px;
+    word-break: break-word;
+  }
+  &__subtitle {
+    font-size: ms(-3);
+    color: $text-secondary;
+  }
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    &__description {
+      font-weight: 500;
+      color: $text-secondary;
+    }
+    &__link {
+      margin-bottom: 7px;
+      svg {
+        vertical-align: middle;
+        line-height: 0;
+        display: inline-block;
+        max-height: 18px;
+        width: 16px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.blocks {
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    &_cols-5 .block {
+      width: calc(100% / 5);
+    }
+    .block {
+      width: calc(100% / 4);
+      margin-bottom: 40px;
+      @media (max-width: 900px) {
+        width: calc(100% / 3);
+      }
+      @media (max-width: 700px) {
+        width: calc(100% / 2);
+      }
+      @media (max-width: 450px) {
+        width: 100%;
+      }
+      &__img {
+        box-shadow: $shadows;
+      }
+    }
+  }
+}

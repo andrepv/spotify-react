@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Block /> renders correctly 1`] = `
+<div
+  className="block"
+>
+  <div
+    className="block__media"
+  >
+    <div
+      className="block__img block__img_root bg-center"
+      style={
+        Object {
+          "backgroundImage": "url(test.png)",
+        }
+      }
+    />
+  </div>
+  <div
+    className="block__content"
+  >
+    <a
+      href="/playlist/1"
+      onClick={[Function]}
+    >
+      <span
+        className="block__title"
+        onClick={[MockFunction]}
+      >
+        test
+      </span>
+    </a>
+    <p
+      className="block__subtitle"
+    >
+      0 tracks
+    </p>
+  </div>
+</div>
+`;

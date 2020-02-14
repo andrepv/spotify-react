@@ -1,0 +1,202 @@
+@import
+"variables.scss",
+"modularscale.scss";
+
+.track {
+  display: flex;
+  align-items: center;
+  position: relative;
+  &__icon {
+    border: 2px solid $border-color;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      fill: $text-dark;
+      stroke: $text-dark;
+      width: 15px;
+      height: 15px;
+      margin-right: -4px;
+      &.track__icon-pause {
+        margin-right: 0;
+      }
+    }
+    &.disabled svg {
+      fill: $border-color;
+      stroke: $border-color;
+    }
+  }
+  &__cover-art {
+    position: relative;
+    margin-right: 15px;
+    &-image {
+      border-radius: 5px;
+      width: 60px;
+      height: 60px;
+      vertical-align: bottom;
+    }
+    &_has-image {
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, .5);
+        height: 100%;
+        border-radius: $border-radius;
+        transition: all .3s;
+        opacity: 0;
+      }
+      .track__icon {
+        position: absolute;
+        opacity: 0;
+        border: 0;
+        transition: all .3s;
+        svg {
+          fill: #FFFFFF;
+          stroke: #FFFFFF;
+          width: 25px;
+          height: 25px;
+          margin: 0;
+        }
+        &.disabled svg {
+          fill: $text-secondary;
+          stroke: $text-secondary;
+        }
+      }
+    }
+  }
+  &__chart-number {
+    margin-right: 12px;
+    width: 22px;
+    font-weight: 500;
+    font-size: ms(-2);
+  }
+  &__info {
+    position: relative;
+    justify-content: space-between;
+    display: flex;
+    flex: 1;
+    &-wrapper {
+      max-width: 80%;
+    }
+  }
+  &__title {
+    font-weight: 500;
+    font-size: ms(-2);
+    margin-bottom: 2px;
+  }
+  &__authors {
+    font-size: ms(-3);
+    color: $text-secondary;
+  }
+  &__duration {
+    color: $text-secondary;
+    font-size: ms(-2);
+  }
+  &__extra-controls {
+    position: absolute;
+    right: 0;
+  }
+  .more-btn {
+    opacity: 0;
+    position: absolute;
+    right: 45px;
+    &_active {
+      opacity: 1;
+    }
+  }
+  &_active {
+    .track__cover-art:before,
+    .track__icon {
+      opacity: 1;
+    }
+  }
+  &:hover {
+    .track__cover-art:before,
+    .track__icon,
+    .like-btn,
+    .more-btn {
+      opacity: 1;
+      cursor: pointer;
+    }
+    .track__duration {
+      opacity: 0;
+    }
+  }
+  .context-menu {
+    right: 30px;
+    @media (max-width: 450px) {
+      right: 0;
+    }
+  }
+  &__menu {
+    &-item {
+      padding: 10px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    &-items {
+      padding: 15px;
+    }
+    &-no-results {
+      padding: 0 15px;
+    }
+    &-icon {
+      margin-right: 10px;
+      width: 22px;
+      height: 22px;
+    }
+  }
+  .like-btn {
+    right: 0;
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+.tracks {
+  display: flex;
+  flex-wrap: wrap; 
+  &_col-2 {
+    margin-right: -30px;
+    .column {
+      width: 50%;
+    }
+  }
+  &_col-3 {
+    margin-right: -30px;
+    .column {
+      width: 33.3333%;
+    }
+  }
+  .column {
+    margin-bottom: -30px;
+    padding-right: 30px;
+    @media (max-width: 900px) {
+      margin-bottom: 0;
+      width: 100%;
+    }
+  }
+}
+
+.top-songs {
+  width: 54%;
+  @media (max-width: 900px) {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  &__container {
+    overflow-y: scroll;
+  }
+  &__wrapper {
+    padding-right: 20px;
+    padding-bottom: 100%;
+    height: 0;
+  }
+}

@@ -1,0 +1,275 @@
+@import
+"variables",
+"modularscale";
+
+.tracklist {
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+  &__modal {
+    position: fixed;
+    background: $bg-primary;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    box-shadow: -7px 0 13px 0 rgba(168, 179, 211, 0.5);
+    @media (max-width: 900px) {
+      width: 80%;
+    }
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+    .tracklist {
+      padding: 40px;
+      min-height: 130px;
+      &__container {
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+      }
+      &__header {
+        padding: 40px;
+        background: $bg-alt;
+        position: relative;
+      }
+      &__cover-art {
+        width: 34%;
+        padding-bottom: 34%;
+        @media (max-width: 700px) {
+          width: 35%;
+          padding-bottom: 35%;
+        }
+        @media (max-width: 550px) {
+          margin-bottom: 20px;
+          width: 70%;
+          padding-bottom: 70%;
+        }
+      }
+      &__info {
+        width: 60%;
+        @media (max-width: 550px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__loader {
+    height: 100vh;
+  }
+  &__overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+    background: rgba(255, 255, 255, 0.8);
+    &-appear {
+      opacity: 0;
+      .tracklist__modal {
+        transform: translateX(200%);
+      }
+    }
+    &-appear-active {
+      opacity: 1;
+      transition: all 300ms ease-in-out;
+      .tracklist__modal {
+        transform: translateX(0);
+        transition: all 500ms ease-in-out;
+      }
+    }
+    &-exit {
+      opacity: 1;
+    }
+    &-exit-active {
+      transition: all 500ms ease-in-out;
+      opacity: 0;
+      .tracklist__modal {
+        transform: translateX(200%);
+        transition: all 500ms ease-in-out;
+      }
+    }
+  }
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    @media (max-width: 550px) {
+      flex-direction: column;
+      text-align: center;
+    }
+    .tracklist__more-btn,
+    .like-btn {
+      width: 46px;
+      height: 46px;
+      border: 2px solid $border-color;
+      border-radius: 24px;
+      svg {
+        vertical-align: middle;
+      }
+    }
+    .tracklist__buttons {
+      .context-menu {
+        top: 50px;
+        right: 0;
+        padding: 10px 0;
+        cursor: default;
+        .tracklist__more-item {
+          padding: 10px 20px;
+          &:hover {
+            background: $bg-alt;
+          }
+        }
+      }
+    }
+  }
+  &__cover-art {
+    width: 25%;
+    box-shadow: $shadows;
+    border-radius: $border-radius;
+    padding-bottom: 25%;
+    position: relative;
+    @media (max-width: 700px) {
+      width: 35%;
+      padding-bottom: 35%;
+    }
+    @media (max-width: 550px) {
+      margin-bottom: 20px;
+      width: 70%;
+      padding-bottom: 70%;
+    }
+    &:hover {
+      .tracklist__upload-cover {
+        opacity: 1;
+      }
+    }
+  }
+  &__info {
+    width: 72%;
+    @media (max-width: 700px) {
+      width: 60%;
+    }
+    @media (max-width: 550px) {
+      width: 100%;
+    }
+  }
+  &__editable-field {
+    border: 1px solid transparent;
+    overflow: hidden;
+    resize: none;
+    font-family: $font-family-base;
+    width: 100%;
+    &:hover {
+      border: 1px solid $border-color;
+      cursor: pointer;
+    }
+  }
+  &__name {
+    margin-bottom: 4px;
+    @media (max-width: 550px) {
+      font-size: ms(5);
+      text-align: center;
+    }
+    &_edit {
+      font-weight: 600;
+      font-size: ms(11);
+      color: $text-dark;
+    }
+  }
+  &__additional-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    @media (max-width: 550px) {
+      justify-content: center;
+    }
+  }
+  &__additional-info,
+  &__authors {
+    color: $text-secondary;
+    font-size: ms(-1);
+  }
+  &__dot {
+    margin: 0 8px;
+  }
+  &__additional-info svg {
+    width: 18px;
+    vertical-align: bottom;
+    margin-right: 6px;
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    @media (max-width: 550px) {
+      justify-content: center;
+    }
+  }
+  &__play-btn {
+    background: $text-dark;
+    color: #fff;
+    font-weight: 500;
+    margin-right: 10px;
+    border-radius: 24px;
+    font-size: ms(0);
+    width: 120px;
+    height: 43px;
+    &_disabled {
+      cursor: not-allowed;
+    }
+    svg {
+      vertical-align: middle;
+      width: 18px;
+      height: 18px;
+      margin-right: 5px;
+      fill: #fff;
+      stroke: #fff;
+    }
+  }
+  &__remove {
+    cursor: pointer;
+    span {
+      vertical-align: middle;
+    }
+    svg {
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+  }
+  &__upload-cover {
+    padding: 13px;
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: ms(-2);
+    z-index: 1;
+    opacity: 0;
+    text-align: center;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      background: #000;
+      opacity: .5;
+      border-radius: 5px;
+    }
+    &-input {
+      display: none;
+    }
+  }
+  .track__info {
+    width: 90%;
+  }
+}

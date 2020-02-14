@@ -1,0 +1,107 @@
+@import 
+"variables",
+"modularscale";
+
+.select {
+  width: 250px;
+  position: relative;
+  @media (max-width: 600px) {
+    width: 100%;
+    margin: 10px 0;
+  }
+  &__label {
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: ms(-1);
+    z-index: 9;
+    border: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    svg {
+       transition: all .3s;
+       width: 24px;
+       height: 24px;
+    }
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    cursor: pointer;
+    font-size: ms(-1);
+    font-weight: 600;
+    padding-bottom: 15px;
+    svg {
+      margin-right: 6px;
+      margin-left: -6px;
+    }
+    &_not-active {
+      cursor: default;
+    }
+  }
+  &.more-btn_active .chevron-up {
+     transform: rotate(-180deg);
+  }
+  &__dropdown {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    font-size: ms(-1);
+    background-color: $bg-primary; 
+    border-radius: 0 0 10px 10px;
+    z-index: 2;
+  }
+  &__search {
+    border-top: 2px solid $border-color;
+    margin: 0 16px;
+    &-input {
+      padding: 14px 0;
+      font-size: ms(-1);
+      line-height: 20px;
+      outline: none;
+      border: 0;
+      width: 100%;
+      font-family: $font-family-base;
+    }
+  }
+  &__inner {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 200px;
+  }
+  &__country {
+    margin-top: 10px;
+    &.context-menu {
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
+  }
+  &__empty {
+    cursor: default;
+    padding: 10px 16px;
+    font-size: ms(0);
+    padding-top: 0;
+    color: $text-secondary;
+  }
+  &__option {
+    cursor: pointer;
+    font-size: ms(-1);
+    line-height: 18px;
+    padding: 10px 16px;
+    text-align: left;
+    &.overflow-ellipsis {
+      max-width: 100%;
+    }
+    svg {
+      margin-right: 15px;
+      stroke: $text-primary;
+      vertical-align: middle;
+    }
+    &:hover {
+      background: $bg-alt;
+    }
+  }
+}

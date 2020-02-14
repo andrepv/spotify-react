@@ -1,0 +1,15 @@
+$family: unquote("Poppins:300,400,500,600,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=#{$family}');
+
+$bg-primary: #FFFFFF;
+$bg-secondary: #FDFDFD;
+$bg-alt: #F8F8F8;
+$border-color: #efefef;
+$text-primary: #7d7d7d;
+$text-secondary: #949494;
+$text-dark: #1D1B1A;
+
+$font-family-base: 'Poppins', sans-serif;
+
+$border-radius: 5px;
+$shadows: 10px 8px 15px 0 rgba(168, 179, 211, 0.24);

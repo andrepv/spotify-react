@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ContextMenuItems /> renders correctly 1`] = `
+<div
+  className="select__dropdown"
+>
+  <div
+    className="select__inner custom-scrollbar"
+  >
+    <ul>
+      <li
+        className="select__option overflow-ellipsis"
+        onClick={[Function]}
+      >
+        item1
+      </li>
+      <li
+        className="select__option overflow-ellipsis"
+        onClick={[Function]}
+      >
+        item2
+      </li>
+    </ul>
+  </div>
+  <div
+    className="select__search"
+  >
+    <input
+      className="select__search-input"
+      onChange={[Function]}
+      placeholder="Search..."
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;

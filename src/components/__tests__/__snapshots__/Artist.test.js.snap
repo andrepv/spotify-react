@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Artist /> renders correctly 1`] = `
+<div
+  className="artist"
+>
+  <div
+    className="artist__pic artist__pic_root bg-center"
+    style={
+      Object {
+        "backgroundImage": "url(test.png)",
+      }
+    }
+  />
+  <a
+    className="artist__name"
+    href="/artist/1"
+    onClick={[Function]}
+  >
+    <span
+      onClick={[MockFunction]}
+    >
+      test
+    </span>
+  </a>
+</div>
+`;

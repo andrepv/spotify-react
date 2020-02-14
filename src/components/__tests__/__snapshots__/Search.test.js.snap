@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search /> renders correctly 1`] = `
+<div>
+  <div
+    className="search__input-container flex-center"
+  >
+    <div
+      className="search__input-wrapper"
+    >
+      <p>
+        What are you looking for?
+      </p>
+      <div
+        className="search__input"
+      >
+        <input
+          className="search__input-field"
+          onChange={[Function]}
+          placeholder="Start Typing..."
+          type="text"
+          value=""
+        />
+        <span
+          className="search__close"
+          onClick={[MockFunction]}
+        >
+          <svg
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="18"
+              x2="6"
+              y1="6"
+              y2="18"
+            />
+            <line
+              x1="6"
+              x2="18"
+              y1="6"
+              y2="18"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Columns /> renders correctly 1`] = `
+Array [
+  <div
+    className="column"
+  >
+    <div>
+      Block 1
+    </div>
+    <div>
+      Block 2
+    </div>
+  </div>,
+  <div
+    className="column"
+  >
+    <div>
+      Block 3
+    </div>
+    <div>
+      Block 4
+    </div>
+  </div>,
+]
+`;

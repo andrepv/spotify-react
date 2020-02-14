@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthorList /> renders correctly 1`] = `
+Array [
+  <a
+    href="/artist/1"
+    onClick={[Function]}
+  >
+    <span
+      onClick={[MockFunction]}
+    >
+      John Doe
+    </span>
+  </a>,
+  ", ",
+  <a
+    href="/artist/2"
+    onClick={[Function]}
+  >
+    <span
+      onClick={[MockFunction]}
+    >
+      Mike
+    </span>
+  </a>,
+]
+`;

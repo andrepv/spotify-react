@@ -1,0 +1,239 @@
+@import "variables";
+
+.pulse-bg {
+  background: linear-gradient(-90deg, #F0F0F0 0%, #F8F8F8 50%, #F0F0F0 100%);
+  background-size: 400% 400%;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.skeleton {
+  &__header {
+    width: 100%;
+    margin-bottom: 37px;
+  }
+  &__description {
+    width: 100px;
+    height: 20px;
+    margin-bottom: 11px;
+  }
+  &__title {
+    height: 27px;
+    width: 181px;
+  }
+  &__block {
+    width: 25%;
+    padding: 0 10px;
+    @media (max-width: 900px) {
+      width: calc(100% / 3);
+    }
+    @media (max-width: 700px) {
+      width: calc(100% / 2);
+    }
+    @media (max-width: 450px) {
+      width: 100%;
+    }
+    &-image {
+      padding-bottom: 96%;
+      margin-bottom: 12px;
+      border-radius: 5px;
+    }
+    &-title {
+      width: 122px;
+      height: 20px;
+      margin-bottom: 6px;
+    }
+    &-subtitle {
+      width: 73px;
+      height: 16px;
+    }
+  }
+  &__blocks {
+    &-container {
+      display: flex;
+      margin: 0 -10px;
+      &_grid {
+        flex-wrap: wrap;
+        .skeleton__block {
+          margin-bottom: 40px;
+        }
+      }
+      &_carousel {
+        .skeleton__block {
+          @media (max-width: 900px) {
+            &:last-child {
+              display: none;
+            }
+          }
+          @media (max-width: 700px) {
+            &:nth-child(3) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__song {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    &-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+      margin-right: 16px;
+    }
+    &-num {
+      width: 15px;
+      height: 15px;
+      margin-right: 25px;
+    }
+    &-info {
+      width: 80%;
+      height: 45px;
+    }
+    &-title {
+      width: 150px;
+      height: 20px;
+      margin-bottom: 9px;
+    }
+    &-subtitle {
+      width: 70px;
+      height: 14px;
+    }
+  }
+  &_top-songs {
+    width: 53%;
+    @media (max-width: 900px) {
+      width: 100%;
+    }
+    .skeleton__container {
+      height: 445px;
+    }
+  }
+  &_artist-top-tracks {
+    .skeleton__container {
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: space-between;
+    }
+    .skeleton__song {
+      width: 45%;
+    }
+  }
+  &__category {
+    height: 104px;
+    width: 48%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    border-radius: 5px;
+  }
+  &_categories {
+    .skeleton__container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -2%;
+    }
+    .skeleton__category {
+      width: 23%;
+      padding-bottom: 23%;
+      @media (max-width: 900px) {
+        width: calc(100% / 3 - 2%);
+        padding-bottom: calc(100% / 3 - 2%);
+      }
+      @media (max-width: 600px) {
+        width: calc(100% / 2 - 2%);
+        padding-bottom: calc(100% / 2 - 2%);
+      }
+    }
+    &-preview {
+      width: 40%;
+      @media (max-width: 900px) {
+        width: 100%;
+        .skeleton__category {
+          width: calc(100% / 4 - 2%);
+          height: 0;
+          padding-bottom: calc(100% / 4 - 2%);
+        }
+      }
+      @media (max-width: 700px) {
+        .skeleton__category {
+          width: calc(100% / 3 - 2%);
+          padding-bottom: calc(100% / 3 - 2%);
+        }
+      }
+      @media (max-width: 550px) {
+        .skeleton__category {
+          width: calc(100% / 2 - 2%);
+          padding-bottom: calc(100% / 2 - 2%);
+        }
+      }
+      .skeleton__container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -2%;
+      }
+    }
+  }
+  &_artists {
+    .skeleton__container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -30px;
+    }
+    @media (min-width: 900px) {
+      .skeleton__artist {
+        width: calc(100% / 5 - 30px);
+      }
+    }
+    @media (max-width: 700px) {
+      .skeleton__artist {
+        width: calc(100% / 3 - 30px);
+      }
+    }
+    @media (max-width: 550px) {
+      .skeleton__artist {
+        width: calc(100% / 2 - 30px);
+      }
+    }
+  }
+  &__artist {
+    width: calc(100% / 6 - 30px);
+    margin-right: 30px;
+    margin-bottom: 36px;
+    @media (max-width: 900px) {
+      width: calc(100% / 4 - 30px);
+    }
+    @media (max-width: 550px) {
+      width: calc(100% / 3 - 30px);
+    }
+    @media (max-width: 450px) {
+      width: calc(100% / 2 - 30px);
+    }
+    &-image {
+      padding-bottom: 100%;
+      margin-bottom: 15px;
+      border-radius: 100%;
+    }
+    &-title {
+      height: 14px;
+    }
+  }
+  &_related-artists {
+    .skeleton__container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -30px;
+      margin-bottom: -30px;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -135% 0%;
+  }
+}
