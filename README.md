@@ -3,7 +3,7 @@ Music app, built with React js
 
 ## Features
 - Single-Page Application
-- Muisc Player
+- Music Player
 - Infinite Scroll
 - Live Search
 - Lazy Loading Images
